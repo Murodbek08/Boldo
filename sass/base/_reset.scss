@@ -1,0 +1,26 @@
+@use "../utils/functions" as func;
+* {
+  padding: 0;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Manrope", sans-serif;
+}
+.container {
+  $mb-padding: 20;
+  max-width: func.container(1400, 100, $mb-padding);
+  padding: 0 $mb-padding + px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}

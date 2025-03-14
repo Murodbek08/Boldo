@@ -1,0 +1,11 @@
+@mixin flex($align-items, $justify-content, $gap) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap + px;
+}
+@mixin btn($padding, $bg-color, $radius) {
+  padding: $padding;
+  background-color: $bg-color;
+  border-radius: $radius;
+}

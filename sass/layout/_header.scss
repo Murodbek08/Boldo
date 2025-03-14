@@ -1,0 +1,69 @@
+@use "../utils/fonts" as fonts;
+@use "../utils/mixins" as mix;
+@use "../utils/variables" as var;
+
+.header-desktop {
+  padding: 56px 0;
+  background-color: transparent;
+  background-color: var.$color-0a2640;
+  @media (max-width: 700px) {
+    padding: 10px 0;
+  }
+  .nav-desktop {
+    @include mix.flex(center, space-between, 0);
+    ul {
+      @include mix.flex(center, start, 40);
+      @media (max-width: 700px) {
+        display: none;
+      }
+      a {
+        transition: color 0.3s ease-in-out;
+        @include fonts.font(600, 16, 28, 0, var.$color-ffffff);
+        &:hover {
+          color: var.$color-65e4a3;
+        }
+      }
+    }
+    .nav-menu-btn {
+      transition: color 0.3s ease-in-out;
+      @include mix.btn(8px 40px, var.$color-ffffff, 24px);
+      &:hover {
+        @include mix.btn(8px 40px, var.$color-ecaa00, 24px);
+      }
+      a {
+        @include fonts.font(700, 16, 24, 0, var.$color-0a2640);
+      }
+    }
+    .nav-menu-btn:hover a {
+      color: var.$color-65e4a3;
+    }
+  }
+}
+.header-mobile {
+  display: none;
+  padding: 10px 0 5px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var.$color-0a2640;
+  @media (max-width: 700px) {
+    display: flex;
+  }
+  .nav-mobile {
+    width: 100%;
+    display: flex;
+    .nav-mobile-menu {
+      width: 100%;
+      @include mix.flex(center, space-evenly, 0);
+      li {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        a {
+          background-color: #0a2640;
+          @include fonts.font(500, 13, 15, 0, var.$color-ffffff);
+        }
+      }
+    }
+  }
+}
