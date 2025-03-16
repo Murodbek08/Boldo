@@ -40,5 +40,12 @@ scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// loading
+const loadingOverlay = document.getElementById("loadingOverlay");
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loadingOverlay.style.display = "none";
+  }, 4000);
+});
 // Aos
 AOS.init();
