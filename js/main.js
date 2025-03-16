@@ -13,13 +13,6 @@ $(document).ready(function () {
     },
   });
 });
-// dark-mode
-
-let modeBtn = document.getElementById("mode-btn");
-
-document.addEventListener("click", function () {
-  document.body.classList.toggle("dark");
-});
 
 // navbar shrink
 
@@ -34,3 +27,15 @@ function shrink() {
     navbar.classList.remove("navbar-shrink");
   }
 }
+// dark-mode
+
+const darkModeBtn = document.getElementById("darkModeBtn");
+darkModeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+
+// bac top
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

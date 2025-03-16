@@ -26,3 +26,181 @@ a {
 li {
   list-style-type: none;
 }
+
+.tooltip-fixed {
+  right: 30px;
+  top: 300px;
+  width: 50px;
+  border-radius: 100%;
+  position: fixed;
+  z-index: 99999999999;
+}
+.tooltip-container {
+  background: rgb(3, 169, 244);
+  background: linear-gradient(138deg, rgb(0, 0, 0) 15%, rgb(0, 31, 46) 65%);
+  position: relative;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0.7em 0.7em;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.tooltip-container:hover {
+  transition: all 0.9s;
+}
+.tooltip-container .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.tooltip-container:hover .text {
+  fill: rgb(0, 0, 0);
+  transition: all 0.9s;
+}
+.tooltip1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #000000;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.tooltip-container:hover .tooltip1 {
+  top: 150%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  border-radius: 50px;
+  transform: translate(-50%, -5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip1:hover {
+  background: #03a9f4;
+  fill: #fff;
+}
+.tooltip2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  padding: 7px 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.tooltip-container:hover .tooltip2 {
+  top: -120%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(-50%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip2:hover {
+  background-color: var.$color-0dbbfc;
+}
+.tooltip4 {
+  position: absolute;
+  top: 100%;
+  left: -190%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #001722;
+  padding: 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.tooltip-container:hover .tooltip4 {
+  top: 10%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip4:hover {
+  background: #8c9eff;
+}
+.tooltip5 {
+  position: absolute;
+  top: 100%;
+  left: -145%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #001722;
+  padding: 7px 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.tooltip-container:hover .tooltip5 {
+  top: -78%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip5:hover {
+  background: #bd081c;
+  fill: #fff;
+}
+.tooltip8 {
+  position: absolute;
+  top: 100%;
+  left: -150%;
+  transform: translateX(70%);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  fill: #001722;
+  padding: 7px 10px;
+  border-radius: 50px;
+  transition: opacity 0.3s, visibility 0.3s, top 0.3s, background 0.3s;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.tooltip-container:hover .tooltip8 {
+  top: 101%;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  transform: translate(70%, -5px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tooltip-container:hover .tooltip8:hover {
+  background: #ff4500;
+  fill: #fff;
+}
