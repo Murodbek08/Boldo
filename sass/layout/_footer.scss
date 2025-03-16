@@ -1,0 +1,144 @@
+@use "../utils/fonts" as fonts;
+@use "../utils/mixins" as mix;
+@use "../utils/variables" as var;
+
+footer {
+  background-color: var.$color-ffffff;
+  .dark & {
+    background-color: var.$color-0a2640;
+  }
+  .footer {
+    padding: 100px 0 117px 0;
+    @include mix.flex(start, space-between, 40);
+    flex-wrap: wrap;
+    @media (max-width: 750px) {
+      justify-content: center;
+    }
+    .footer-information {
+      .footer-logo {
+        a {
+          svg {
+            path {
+              .dark & {
+                fill: var.$color-ffffff;
+              }
+            }
+          }
+        }
+      }
+      .footer-text-p-top {
+        padding-top: 40px;
+        display: block;
+        max-width: 300px;
+        @include fonts.font(400, 16, 28, 0, var.$color-777777);
+        .dark & {
+          @include fonts.font(400, 16, 28, 0, var.$color-ffffff);
+        }
+      }
+      .footer-text-p-top-bottom {
+        padding-top: 64px;
+        display: block;
+        @include fonts.font(400, 16, 28, 0, var.$color-777777);
+        .dark & {
+          @include fonts.font(400, 16, 28, 0, var.$color-ffffff);
+        }
+      }
+    }
+    .footer-landings-menu {
+      h3 {
+        @include fonts.font(700, 20, 32, 0, var.$color-000000);
+        .dark & {
+          @include fonts.font(700, 20, 32, 0, var.$color-65e4a3);
+        }
+      }
+      li {
+        padding-top: 32px;
+        a {
+          @include fonts.font(400, 20, 32, 0, var.$color-777777);
+          &::after {
+            position: sticky;
+            z-index: 99999;
+            content: "Hiring!";
+            margin-left: 10px;
+            @include fonts.font(700, 13, 26, 0, var.$color-0a2640);
+            padding: 10px 15px;
+            border-radius: 120px;
+            background-color: var.$color-65e4a3;
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+          &:hover::after {
+            opacity: 1;
+          }
+          .dark & {
+            @include fonts.font(400, 20, 32, 0, var.$color-ffffff);
+          }
+        }
+      }
+    }
+    .footer-company-menu {
+      h3 {
+        @include fonts.font(700, 20, 32, 0, var.$color-000000);
+        .dark & {
+          @include fonts.font(700, 20, 32, 0, var.$color-65e4a3);
+        }
+      }
+      li {
+        padding-top: 32px;
+        a {
+          @include fonts.font(400, 20, 32, 0, var.$color-777777);
+          &::after {
+            position: sticky;
+            z-index: 99999;
+            content: "Hiring!";
+            margin-left: 10px;
+            @include fonts.font(700, 13, 26, 0, var.$color-0a2640);
+            padding: 10px 15px;
+            border-radius: 120px;
+            background-color: var.$color-65e4a3;
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+          &:hover::after {
+            opacity: 1;
+          }
+          .dark & {
+            @include fonts.font(400, 20, 32, 0, var.$color-ffffff);
+          }
+        }
+      }
+    }
+    .footer-resources-menu {
+      h3 {
+        @include fonts.font(700, 20, 32, 0, var.$color-000000);
+        .dark & {
+          @include fonts.font(700, 20, 32, 0, var.$color-65e4a3);
+        }
+      }
+      li {
+        padding-top: 32px;
+        a {
+          @include fonts.font(400, 20, 32, 0, var.$color-777777);
+          &::after {
+            position: sticky;
+            z-index: 99999;
+            content: "Hiring!";
+            margin-left: 10px;
+            @include fonts.font(700, 13, 26, 0, var.$color-0a2640);
+            padding: 10px 15px;
+            border-radius: 120px;
+            background-color: var.$color-65e4a3;
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+          &:hover::after {
+            opacity: 1;
+          }
+          .dark & {
+            @include fonts.font(400, 20, 32, 0, var.$color-ffffff);
+          }
+        }
+      }
+    }
+  }
+}

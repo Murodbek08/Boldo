@@ -1,4 +1,5 @@
-@use "./sass/base/reset";
 @use "./sass/base/typography";
-@use "./sass/layout/footer";
+@use "./sass/base/reset";
 @use "./sass/layout/header";
+@use "./sass/layout/footer";
+@use "./sass/pages/product";

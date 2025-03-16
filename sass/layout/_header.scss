@@ -3,9 +3,13 @@
 @use "../utils/variables" as var;
 
 .header-desktop {
+  position: fixed;
+  top: 0;
+  z-index: 999999999999999999;
+  width: 100%;
   padding: 56px 0;
   background-color: transparent;
-  background-color: var.$color-0a2640;
+  transition: 0.5s;
   @media (max-width: 700px) {
     padding: 10px 0;
   }
@@ -17,30 +21,138 @@
         display: none;
       }
       a {
+        position: relative;
         transition: color 0.3s ease-in-out;
         @include fonts.font(600, 16, 28, 0, var.$color-ffffff);
-        &:hover {
-          color: var.$color-65e4a3;
+        .dark & {
+          @include fonts.font(600, 16, 28, 0, var.$color-65e4a3);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0;
+          height: 2px;
+          background-color: var.$color-ffffff;
+          transition: width 0.3s ease-in-out;
+          .dark & {
+            background-color: var.$color-65e4a3;
+          }
+        }
+        &:hover::after {
+          width: 100%;
         }
       }
     }
     .nav-menu-btn {
-      transition: color 0.3s ease-in-out;
-      @include mix.btn(8px 40px, var.$color-ffffff, 24px);
-      &:hover {
-        @include mix.btn(8px 40px, var.$color-ecaa00, 24px);
+      .btn-conteiner {
+        @include mix.flex(start, center, 0);
+        a {
+          &::after {
+            content: "";
+            background-color: transparent;
+          }
+        }
       }
-      a {
-        @include fonts.font(700, 16, 24, 0, var.$color-0a2640);
+      .btn-content {
+        width: 150px;
+        @include mix.flex(center, center, 0);
+        text-decoration: none;
+        background-color: var.$color-ffffff;
+        transition: 1s;
+        border-radius: 100px;
+        box-shadow: 0 0 0.2em 0 var.$color-ffffff;
+        .dark & {
+          background-color: var.$color-65e4a3;
+          box-shadow: 0 0 0.2em 0 var.$color-65e4a3;
+        }
+        .btn-title {
+          @include fonts.font(700, 20, 28, 0, var.$color-0a2640);
+        }
       }
-    }
-    .nav-menu-btn:hover a {
-      color: var.$color-65e4a3;
+      .btn-content:hover,
+      .btn-content:focus {
+        transition: 0.5s;
+        -webkit-animation: btn-content 1s;
+        animation: btn-content 1s;
+        outline: 0.1em solid transparent;
+        outline-offset: 0.2em;
+        box-shadow: 0 0 0.4em 0 var.$color-ffffff;
+      }
+      .btn-content .icon-arrow {
+        transition: 0.5s;
+        margin-right: 0px;
+        transform: scale(0.6);
+      }
+      .btn-content:hover .icon-arrow {
+        transition: 0.5s;
+        margin-right: 25px;
+      }
+      .icon-arrow {
+        width: 10px;
+        margin-left: 15px;
+        position: relative;
+        top: 6%;
+      }
+      #arrow-icon-one {
+        transition: 0.4s;
+        transform: translateX(-60%);
+      }
+      #arrow-icon-two {
+        transition: 0.5s;
+        transform: translateX(-30%);
+      }
+      .btn-content:hover #arrow-icon-three {
+        animation: color_anim 1s infinite 0.2s;
+      }
+      .btn-content:hover #arrow-icon-one {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.6s;
+      }
+      .btn-content:hover #arrow-icon-two {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.4s;
+      }
+      @keyframes color_anim {
+        0% {
+          fill: white;
+        }
+
+        50% {
+          fill: var.$color-0a2640;
+        }
+
+        100% {
+          fill: white;
+        }
+      }
+
+      /* Button animations */
+      @-webkit-keyframes btn-content {
+        0% {
+          outline: 0.2em solid var.$color-ffffff;
+          outline-offset: 0;
+        }
+      }
+
+      @keyframes btn-content {
+        0% {
+          outline: 0.2em solid var.$color-ffffff;
+          outline-offset: 0;
+        }
+      }
     }
   }
 }
+.navbar-shrink {
+  padding: 20px 0;
+  background-color: var.$color-0a2640;
+}
 .header-mobile {
+  z-index: 9999999999999;
   display: none;
+  border-radius: 20px 20px 0 0;
   padding: 10px 0 5px 0;
   width: 100%;
   position: fixed;
@@ -56,8 +168,7 @@
       width: 100%;
       @include mix.flex(center, space-evenly, 0);
       li {
-        display: flex;
-        align-items: center;
+        @include mix.flex(center, start, 0);
         flex-direction: column-reverse;
         a {
           background-color: #0a2640;
