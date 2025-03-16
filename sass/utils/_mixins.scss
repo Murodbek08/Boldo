@@ -9,3 +9,71 @@
   background-color: $bg-color;
   border-radius: $radius;
 }
+
+@mixin font($family: M) {
+  @if $family != M {
+    font-family: "Open Sans", serif;
+  } @else {
+    font-family: "Manrope", serif;
+  }
+}
+
+@mixin pos($pos, $top: no, $right: no, $bottom: no, $left: no) {
+  position: $pos;
+  @if $top != no {
+    top: $top;
+  }
+  @if $right != no {
+    right: $right;
+  }
+  @if $bottom != no {
+    bottom: $bottom;
+  }
+  @if $left != no {
+    left: $left;
+  }
+}
+@mixin pad($padding) {
+  padding: $padding;
+}
+
+@mixin ma($mar) {
+  margin: $mar;
+}
+@mixin bg($image: no, $color: no, $size: no) {
+  @if $image != no {
+    background: $image no-repeat;
+  }
+  @if $color != no {
+    background-color: $color;
+  }
+  @if $size != no {
+    background-size: $size;
+  }
+}
+
+@mixin width($max: no, $width) {
+  @if $max != no {
+    max-width: $width;
+  } @else {
+    width: $width;
+  }
+}
+
+@mixin height($height) {
+  height: $height;
+}
+
+@mixin text($color, $size, $weight, $line, $align: no) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line;
+  @if $align != no {
+    text-align: $align;
+  }
+}
+
+@mixin fill($fill) {
+  fill: $fill;
+}
