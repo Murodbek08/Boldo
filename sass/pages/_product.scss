@@ -679,7 +679,6 @@
     background-color: var.$text-color;
   }
   h5 {
-    padding-top: 156px;
     margin: 0 auto;
     @include mix.width(83, 32);
     @include font.font(20, 400, 32);
