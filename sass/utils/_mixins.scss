@@ -9,7 +9,10 @@
   background-color: $bg-color;
   border-radius: $radius;
 }
-
+@mixin width($width, $height) {
+  max-width: $width + px;
+  height: $height + px;
+}
 @mixin font($family: M) {
   @if $family != M {
     font-family: "Open Sans", serif;

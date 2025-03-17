@@ -2,6 +2,15 @@
   margin-top: 160px;
   background-color: #65e4a3;
   padding: 96px 0;
+  @media (max-width: 700px) {
+    margin-top: 60px;
+  }
+  .dark & {
+    background-color: #0a2640;
+  }
+  .dark & {
+    color: #ffffff;
+  }
   .aboutText {
     display: flex;
     justify-content: space-between;
@@ -64,6 +73,10 @@
     text-align: center;
     margin: 0 auto;
     max-width: 842px;
+    @media (max-width: 325px) {
+      font-size: 28px;
+      line-height: 42px;
+    }
   }
   .lotNumbers {
     display: flex;
@@ -85,6 +98,11 @@
         font-size: 96px;
         line-height: 56px;
         letter-spacing: 0%;
+        text-align: center;
+        @media (max-width: 352px) {
+          font-size: 56px;
+          line-height: 40px;
+        }
       }
       h6 {
         font-weight: 400;
@@ -102,6 +120,11 @@
         font-size: 96px;
         line-height: 56px;
         letter-spacing: 0%;
+        text-align: center;
+        @media (max-width: 352px) {
+          font-size: 56px;
+          line-height: 40px;
+        }
       }
       h6 {
         font-weight: 400;
@@ -120,6 +143,11 @@
         font-size: 96px;
         line-height: 56px;
         letter-spacing: 0%;
+        text-align: center;
+        @media (max-width: 352px) {
+          font-size: 56px;
+          line-height: 40px;
+        }
       }
       h6 {
         font-weight: 400;
@@ -135,15 +163,23 @@
 .block {
   background-color: #0a2640;
   padding: 120px 0;
+  .dark & {
+    background-color: #6ae6a5;
+  }
+
   .Texts {
     max-width: 800px;
     margin: 0 auto;
+
     p {
       font-weight: 400;
       font-size: 20px;
       line-height: 32px;
       letter-spacing: 0%;
       color: #ffffff;
+      .dark & {
+        color: #000000;
+      }
     }
     h1 {
       font-weight: 400;
@@ -152,6 +188,13 @@
       letter-spacing: 0%;
       color: #ffffff;
       margin-top: 12px;
+      .dark & {
+        color: #000000;
+      }
+      @media (max-width: 352px) {
+        font-size: 36px;
+        line-height: 45px;
+      }
     }
     span {
       font-weight: 400;
@@ -160,6 +203,9 @@
       letter-spacing: 0%;
       color: #f1f1f1;
       margin-top: 32px;
+      .dark & {
+        color: #000000;
+      }
     }
   }
 }
@@ -283,6 +329,12 @@
 .aside_pg {
   background-color: #0a2640;
   padding: 120px 0;
+  .dark & {
+    background-color: #6ae6a5;
+  }
+  .dark & {
+    color: #000000;
+  }
   .aside_pg--text {
     p {
       font-weight: 400;
@@ -291,6 +343,9 @@
       letter-spacing: 0%;
       color: white;
       text-align: center;
+      .dark & {
+        color: #000000;
+      }
     }
     h1 {
       font-weight: 400;
@@ -302,6 +357,13 @@
       margin: 0 auto;
       max-width: 842px;
       color: #ffffff;
+      .dark & {
+        color: #000000;
+      }
+      @media (max-width: 352px) {
+        font-size: 30px;
+        line-height: 40px;
+      }
     }
   }
   .aside_pg_card {
@@ -320,13 +382,30 @@
       line-height: 72px;
       letter-spacing: 0%;
       color: white;
+      .dark & {
+        color: #000000;
+      }
       span {
         color: #6ae6a5;
+        .dark & {
+          color: #ff0000;
+        }
       }
       @media (max-width: 1021px) {
         & {
           font-size: 38px;
           line-height: 52px;
+        }
+      }
+      @media (max-width: 408px) {
+        & {
+          font-size: 28px;
+        }
+      }
+      @media (max-width: 295px) {
+        & {
+          font-size: 28px;
+          line-height: 42px;
         }
       }
     }
@@ -337,6 +416,9 @@
       letter-spacing: 0%;
       max-width: 509px;
       color: #f1f1f1;
+      .dark & {
+        color: #000000;
+      }
       @media (max-width: 1021px) {
         & {
           text-align: center;

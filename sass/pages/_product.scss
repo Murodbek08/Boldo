@@ -1,6 +1,12 @@
 @use "../utils/fonts" as fonts;
 @use "../utils/mixins" as mix;
 @use "../utils/variables" as var;
+@use "../layout/flex" as flx;
+@use "../base/typography" as font;
+@use "../components/button" as btns;
+.owl-carousel .owl-item img {
+  width: none;
+}
 
 .section-hero {
   padding-top: 190px;
@@ -74,6 +80,11 @@
   }
   .section-hero-page-carousel {
     padding: 56px 0 64px 0;
+    .item {
+      img {
+        width: 200px;
+      }
+    }
   }
 }
 .mass_market {
@@ -338,5 +349,505 @@
   }
   .dark & {
     background-color: var.$color-0a2640;
+  }
+}
+
+.stay_open {
+  padding-bottom: 180px;
+  position: relative;
+  .dark & {
+    background-color: var.$text-color;
+  }
+  .stay_open_pages {
+    @include flx.flex(space-between, center, 150);
+    @media (max-width: 1135px) {
+      flex-direction: column;
+    }
+    .stay_open_page_text {
+      margin-top: 226px;
+      h2 {
+        @include mix.width(493, 164);
+        @include font.font(36, 400, 56);
+        @media (max-width: 490px) {
+          @include font.font(26, 400, 46);
+        }
+        .dark & {
+          color: var.$bg-white;
+        }
+      }
+    }
+    .stay_consumer_cards {
+      margin-top: 64px;
+      .stay_consumer_card {
+        margin-top: 24px;
+        border-radius: 4px;
+        box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.08);
+        padding: 16px 53px 16px 50px;
+        @include flx.flex(0, center, 12);
+        @include mix.width(500, 68);
+        transition: 0.5s;
+        background-color: var.$bg-white;
+        &:hover {
+          background-color: var.$bg-ink;
+          color: var.$bg-white;
+        }
+        h3 {
+          @include font.font(16, 600, 28);
+          @media (max-width: 540px) {
+            @include font.font(13, 600, 20);
+          }
+        }
+      }
+    }
+
+    .stay_open_page_img {
+      @media (max-width: 500px) {
+        display: flex;
+        justify-content: center;
+      }
+      position: relative;
+      .stay_open_png {
+        @media (max-width: 500px) {
+          width: 95%;
+        }
+      }
+      img {
+        padding-top: 185px;
+        @media (max-width: 1135px) {
+          padding-top: 0px;
+        }
+      }
+      .stay_card_diagramma {
+        background-color: var.$bg-white;
+        position: absolute;
+        bottom: -100px;
+        left: 150px;
+        padding-bottom: 30px;
+        @include mix.width(251, 388);
+        border-radius: 12px;
+        box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.12);
+        @media (max-width: 465px) {
+          left: 0px;
+          @include mix.width(200, 340);
+        }
+        .dark & {
+          background-color: var.$bg-grey;
+        }
+        img {
+          padding: 40px 40px 0 40px;
+          @media (max-width: 465px) {
+            padding: 10px 10px 0 10px;
+          }
+        }
+        .stay_menu {
+          padding: 15px 0 0 15px;
+          @include flx.flex(0, center, 10);
+        }
+        .bg_color_1 {
+          width: 4.97px;
+          height: 4.96px;
+          border-radius: 50%;
+          background-color: var.$bg-green;
+        }
+        .bg_color_2 {
+          width: 4.97px;
+          height: 4.96px;
+          border-radius: 50%;
+          background-color: var.$bg-grey;
+        }
+        .bg_color_3 {
+          width: 4.97px;
+          height: 4.96px;
+          border-radius: 50%;
+          background-color: var.$bg-ink;
+        }
+        h4 {
+          @include font.font(14, 400, 24);
+          @media (max-width: 465px) {
+            @include font.font(10, 400, 20);
+          }
+          .dark & {
+            color: var.$bg-white;
+          }
+        }
+      }
+    }
+  }
+}
+// .owl-nav {
+//   display: block !important;
+//   justify-content: center;
+//   margin-top: 10px;
+//   gap: 80px;
+// }
+
+// .owl-nav button {
+//   position: relative;
+//   top: -315px;
+//   left: -20px;
+//   width: 72px;
+//   height: 72px;
+//   border-radius: 50%;
+//   background-color: var.$bg-white;
+//   cursor: pointer;
+// }
+
+// .owl-nav button:hover {
+//   background-color: #555;
+// }
+.company_website_teams {
+  padding-top: 96px;
+  background-color: var.$bg-ink;
+  .dark & {
+    background-color: var.$text-color;
+  }
+  .company_tema_texts_arrow {
+    @include flx.flex(space-between, center, 28);
+    @media (max-width: 490px) {
+      flex-direction: column;
+    }
+    h2 {
+      @include mix.width(500, 139);
+      @include font.font(48, 400, 72);
+      color: var.$bg-white;
+      @media (max-width: 730px) {
+        @include font.font(38, 400, 62);
+      }
+      @media (max-width: 630px) {
+        @include font.font(28, 400, 52);
+      }
+    }
+    .arrows_solid {
+      padding-top: 60px;
+      @include flx.flex(0, center, 28);
+      div {
+        @include flx.flex(center, center, 0);
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background-color: var.$bg-white;
+      }
+    }
+  }
+  .owl-item {
+    padding: 0 10px;
+  }
+  .comapany_teams_cards {
+    padding-bottom: 96px;
+    // @include flx.flex(space-between, 0, 40);
+    margin-top: 72px;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .comapany_teams_card_1 {
+      @include mix.width(350, 322);
+      background-color: var.$bg-white;
+      border-radius: 12px;
+      @media (max-width: 1100px) {
+        margin-top: 30px;
+      }
+      h5 {
+        padding: 40px;
+        @include font.font(24, 400, 36);
+        @media (max-width: 390px) {
+          @include font.font(18, 400, 30);
+        }
+      }
+      .comapany_teams_card_name {
+        img {
+          width: 40px;
+        }
+        @include flx.flex(0, center, 16);
+        padding: 0 40px 40px 40px;
+        h4 {
+          @include font.font(16, 700, 32);
+          color: var.$bg-ink;
+          @media (max-width: 327px) {
+            @include font.font(13, 700, 28);
+          }
+        }
+        p {
+          @include font.font(14, 400, 32);
+          color: var.$bg-ink;
+          @media (max-width: 327px) {
+            @include font.font(10, 700, 28);
+          }
+        }
+      }
+    }
+  }
+}
+.connect {
+  background-color: #fff;
+  padding: 124px 0 158px;
+  .dark & {
+    background-color: #65e4a3;
+  }
+}
+.connect img {
+  width: 100%;
+  margin: 0 0 56px 0;
+}
+@media (max-width: 500px) {
+  .connect img {
+    display: none;
+  }
+}
+.connect--main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
+}
+@media (max-width: 1034px) {
+  .connect--main {
+    flex-direction: column;
+  }
+}
+.connect--main h2 {
+  max-width: 500px;
+  color: #000;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 56px;
+}
+.connect--main__dropdown {
+  width: 45%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (max-width: 1034px) {
+  .connect--main__dropdown {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 550px) {
+  .connect--main__dropdown {
+    width: 100%;
+  }
+}
+.connect--main__dropdown div {
+  position: relative;
+  padding: 0 0 16px 0;
+  width: 100%;
+  border-bottom: 1px solid #c4c4c4;
+  transition: 0.5s;
+}
+.connect--main__dropdown div:hover ul {
+  display: flex;
+}
+.connect--main__dropdown div:hover span::after {
+  transform: rotate(180deg);
+}
+.connect--main__dropdown div span {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.connect--main__dropdown div span::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url("../images/product/Group210.svg") no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+}
+.connect--main__dropdown ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+  display: none;
+}
+.connect--main__dropdown ul li {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.product_management {
+  .dark & {
+    background-color: var.$text-color;
+  }
+  h5 {
+    padding-top: 156px;
+    margin: 0 auto;
+    @include mix.width(83, 32);
+    @include font.font(20, 400, 32);
+    color: var.$bg-grey;
+    .dark & {
+      color: var.$bg-white;
+    }
+  }
+  h2 {
+    padding-top: 12px;
+    margin: 0 auto;
+    text-align: center;
+    @include mix.width(842, 144);
+    @include font.font(48, 400, 72);
+    @media (max-width: 506px) {
+      @include font.font(33, 400, 62);
+    }
+    .dark & {
+      color: var.$bg-white;
+    }
+  }
+  .product_cards {
+    padding-top: 79px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+    @media (max-width: 880px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 550px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .product_card {
+      @media (max-width: 990px) {
+        padding-top: 30px;
+      }
+      img {
+        width: 100%;
+      }
+      h3 {
+        padding-top: 12px;
+        @include mix.width(300, 99);
+        @include font.font(20, 400, 32);
+        .dark & {
+          color: var.$bg-white;
+        }
+      }
+      .product_card_name {
+        padding-top: 20px;
+        @include flx.flex(0, center, 12);
+        img {
+          width: auto;
+        }
+        h4 {
+          @include mix.width(300, 32);
+          @include font.font(16, 400, 28);
+          .dark & {
+            color: var.$bg-white;
+          }
+        }
+      }
+      .product_card_number {
+        @include flx.flex(0, center, 12);
+        h4 {
+          @include mix.width(72, 28);
+          @include font.font(16, 700, 28);
+          .dark & {
+            color: var.$bg-white;
+          }
+        }
+        p {
+          @include mix.width(147, 28);
+          @include font.font(16, 400, 28);
+          color: var.$bg-grey;
+          .dark & {
+            color: var.$bg-white;
+          }
+        }
+      }
+    }
+  }
+  .product_button {
+    padding-bottom: 124px;
+    margin-top: 100px;
+    @include flx.flex(center, center, 0);
+    .product_card_btn {
+      @include font.font(20, 700, 28);
+      @include btns.btn(16px 56px 16px 56px, 56, 2);
+      color: var.$bg-ink;
+      border: 3px solid var.$bg-ink;
+      background-color: var.$bg-white;
+      transition: 0.5s;
+      &:hover {
+        background-color: var.$bg-green;
+      }
+    }
+  }
+}
+
+.email {
+  @include mix.bg(no, var.$color-ffffff, no);
+  padding: 86px 0;
+  .dark & {
+    background-color: #0a2640;
+    &--card {
+      background-color: var.$color-0dbbfc;
+      border: 2px solid var.$color-4fe9a4;
+    }
+    h2 {
+      // color: var.$color-;
+    }
+  }
+
+  &--card {
+    @include mix.bg(url(../images/About/Ellipse.png), var.$color-0a2640, no);
+    background-position: top right;
+    @include mix.pad(72px 20px);
+    border-radius: 12px;
+    &__body {
+      @include mix.width(ma, 716px);
+      @include mix.ma(0 auto);
+      h2 {
+        @include mix.text(var.$color-ffffff, 48px, 400, 72px, center);
+        @include mix.ma(0 0 48px 0);
+        @media (max-width: 490px) {
+          font-size: 38px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+  &--form {
+    @include mix.flex(center, center, 24);
+    @media (max-width: 702px) {
+      flex-direction: column;
+    }
+    input {
+      outline: none;
+      @include mix.width(no, 370px);
+      border-radius: 240px;
+      border: 2px solid var.$color-ffffff;
+      @include mix.pad(12px 32px);
+      @include mix.text(var.$color-000000, 20px, 400, 32px);
+      @media (max-width: 490px) {
+        @include mix.width(no, 100%);
+      }
+      &::placeholder {
+        @include mix.text(var.$color-000000, 20px, 400, 32px);
+      }
+      &:focus {
+        box-shadow: inset 0 -4px 0 var.$color-65e4a3;
+      }
+    }
+    button {
+      @include mix.btn(16px 56px, var.$color-65e4a3, 56px);
+
+      border: 2px solid var.$color-65e4a3;
+      @include mix.text(var.$color-0a2640, 20px, 700, 28px);
+      transition: 0.5s;
+      &:hover {
+        @include mix.btn(no, transparent, no);
+        border: 2px solid var.$color-ffffff;
+        color: var.$color-ffffff;
+        box-shadow: inset 210px 0 5px var.$color-0a2640;
+      }
+    }
   }
 }
